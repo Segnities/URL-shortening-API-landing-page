@@ -6,7 +6,20 @@ export default {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'once-pulce': 'pulse 1s linear normal',
+        'visible-appear': 'appear 0.5s ease-in-out normal'
+      },
+      keyframes: {
+        appear: {
+          '0%': { opacity: '0' },
+          '40%': { opacity: '0.55' },
+          '60%': { opacity: '0.7' },
+          '100%': { opacity: '1' },
+        }
+      }
+    },
   },
   plugins: [],
 }
