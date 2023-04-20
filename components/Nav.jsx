@@ -13,7 +13,7 @@ export default function Nav() {
 
     return (
         <header className="w-full">
-            <div className="hidden md:flex justify-around mt-10">
+            <div className="hidden md:flex justify-between mt-10 px-[10%]">
                 <section className="flex justify-between">
                     <h2 className="font-bold text-[2rem] text-dark-violet ">Shortly</h2>
                     <ul className="flex justify-between px-8 items-center">
@@ -52,8 +52,8 @@ export default function Nav() {
             </div>
             {
                 showMenu && (
-                    <div className="relative md:hidden flex w-full items-center  transition-opacity animate-visible-appear justify-center">
-                        <div className="relative flex flex-col w-[90%] justify-center py-3 px-10 rounded-md z-50 bg-[#3b3054] items-center mt-5">
+                    <div className="absolute top-12 md:hidden flex w-full items-center  transition-opacity animate-visible-appear justify-center">
+                        <div className="relative flex flex-col w-[80%] justify-center py-5 px-10 rounded-lg z-50 bg-[#3b3054] items-center mt-5">
                             <ul>
                                 {
                                     links.map(link => (
