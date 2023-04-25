@@ -13,7 +13,7 @@ export default function Nav() {
 
     return (
         <header className="w-full">
-            <div className="hidden md:flex justify-between mt-10 px-[10%]">
+            <div className="hidden md:flex justify-between mt-10 md:px-[10%]">
                 <section className="flex justify-between">
                     <h2 className="font-bold text-[2rem] text-dark-violet ">Shortly</h2>
                     <ul className="flex justify-between px-8 items-center">
