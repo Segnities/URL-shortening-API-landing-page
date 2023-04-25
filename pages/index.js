@@ -23,7 +23,7 @@ export default function Home() {
                 <title>URL shortening</title>
             </Head>
             <Nav />
-            <Space spacing  ="8" />
+            <Space spacing="8" />
             <DiscoverSection />
             <div className="w-full h-96 bg-cover" >
 

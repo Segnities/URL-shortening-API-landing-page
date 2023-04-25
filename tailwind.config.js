@@ -9,7 +9,7 @@ export default {
     extend: {
       animation: {
         'once-pulce': 'pulse 1s linear normal',
-        'visible-appear': 'appear 0.5s ease-in-out normal'
+        'visible-appear': 'appear 0.26s ease-in-out normal'
       },
       keyframes: {
         appear: {
