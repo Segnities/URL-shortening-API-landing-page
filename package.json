@@ -3,23 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "lint": "eslint .",
+    "efix": "eslint --fix --ext .jsx"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^1.3.5",
+    "formik": "^2.2.9",
+    "gsap-trial": "^3.11.5",
     "next": "^13.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.38.0",
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
     "tailwindcss": "^3.3.1"
   }

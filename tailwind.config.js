@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,7 +10,7 @@ export default {
     extend: {
       animation: {
         'once-pulce': 'pulse 1s linear normal',
-        'visible-appear': 'appear 0.26s ease-in-out normal'
+        'visible-appear': 'appear 0.26s ease-in-out normal',
       },
       keyframes: {
         appear: {
@@ -17,10 +18,9 @@ export default {
           '40%': { opacity: '0.55' },
           '60%': { opacity: '0.7' },
           '100%': { opacity: '1' },
-        }
-      }
+        },
+      },
     },
   },
   plugins: [],
-}
-
+};

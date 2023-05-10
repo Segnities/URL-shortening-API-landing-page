@@ -29,4 +29,8 @@
     .text-very-dark-violet {
         color: hsl(260, 8%, 14%);
     }
+
+    .bg-dark-violet {
+        background-color: hsl(257, 27%, 26%);
+    }
 }
