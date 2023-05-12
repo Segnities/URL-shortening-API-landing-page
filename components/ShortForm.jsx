@@ -1,19 +1,19 @@
 import { Formik, Form, Field } from 'formik';
 
 import * as Yup from 'yup';
-import PropTypes from 'prop-types';
+import {
+  arrayOf, shape, func, string,
+} from 'prop-types';
 import getShortenUrls from '../lib/getShortenUrls';
 
 const validationSchema = Yup.object({
   url: Yup.string().url('Invalid URL').required('Please add a link'),
 });
 
-export default function ShortForm({ setUrls, ...props }) {
+export default function ShortForm({ urls, setUrls }) {
   const handleSubmit = async (values) => {
     const shortenUrl = await getShortenUrls(values.url);
-    delete shortenUrl.result.code;
-    setUrls(shortenUrl.result);
-    console.log(shortenUrl.result);
+    setUrls([...urls, shortenUrl.result]);
   };
   return (
     <div className="w-10/12 h-full rounded-lg bg-dark-violet bg-cover bg-[url('/img/bg-shorten-mobile.svg')] md:bg-[url('/img/bg-shorten-desktop.svg')]">
@@ -52,11 +52,21 @@ export default function ShortForm({ setUrls, ...props }) {
           )
         }
       </Formik>
-
     </div>
   );
 }
 
 ShortForm.propTypes = {
-  setUrls: PropTypes.func.isRequired,
+  urls: arrayOf(shape({
+    code: string.isRequired,
+    short_link: string.isRequired,
+    full_short_link: string.isRequired,
+    short_link2: string.isRequired,
+    full_short_link2: string.isRequired,
+    short_link3: string.isRequired,
+    full_short_link3: string.isRequired,
+    share_link: string.isRequired,
+    full_share_link: string.isRequired,
+  })).isRequired,
+  setUrls: func.isRequired,
 };
