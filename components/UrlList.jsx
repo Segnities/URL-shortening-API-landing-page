@@ -1,13 +1,13 @@
 import { arrayOf, shape, string } from 'prop-types';
 
+import UrlItem from './UrlItem';
+
 export default function UrlList({ urls }) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 items-center justify-center">
       {
                 urls.map((url) => (
-                  <div key={url?.code}>
-                    {JSON.stringify(url)}
-                  </div>
+                  <UrlItem key={url?.code} url={url} />
                 ))
             }
     </div>

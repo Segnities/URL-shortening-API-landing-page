@@ -1,6 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 
 import * as Yup from 'yup';
+import { isUndefined } from 'lodash';
 import {
   arrayOf, shape, func, string,
 } from 'prop-types';
@@ -11,9 +12,12 @@ const validationSchema = Yup.object({
 });
 
 export default function ShortForm({ urls, setUrls }) {
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     const shortenUrl = await getShortenUrls(values.url);
-    setUrls([...urls, shortenUrl.result]);
+    if (isUndefined(urls.find((url) => url.original_link === shortenUrl.result.original_link))) {
+      setUrls([...urls, shortenUrl.result]);
+      resetForm();
+    }
   };
   return (
     <div className="w-10/12 h-full rounded-lg bg-dark-violet bg-cover bg-[url('/img/bg-shorten-mobile.svg')] md:bg-[url('/img/bg-shorten-desktop.svg')]">
