@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "next dev",
-    "lint": "eslint .",
-    "efix": "eslint --fix --ext .jsx"
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -26,6 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "classnames": "^2.3.2",
     "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",

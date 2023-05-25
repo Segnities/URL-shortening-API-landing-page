@@ -8,6 +8,9 @@ import Nav from '../components/Nav';
 import Discover from '../components/Discover';
 import ShortForm from '../components/ShortForm';
 import UrlList from '../components/UrlList';
+import LightSlateWrapper from '../components/UI/LightSlateWrapper';
+import SpacingSm from '../components/UI/SpacingSm';
+import SpacingMd from '../components/UI/SpacingMd';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,15 +25,15 @@ export default function Home() {
         <title>URL shortening</title>
       </Head>
       <Nav />
-      <div className="h-24" />
+      <SpacingSm />
       <Discover />
-      <div className="h-48 md:h-32" />
-      <div className="w-full bg-slate-200">
+      <SpacingMd />
+      <LightSlateWrapper className="w-full bg-slate-200">
         <div className="relative bottom-24 w-full h-44 flex flex-1 justify-center items-center">
           <ShortForm urls={urls} setUrls={setUrls} />
         </div>
         <UrlList urls={urls} />
-      </div>
+      </LightSlateWrapper>
     </div>
   );
 }
