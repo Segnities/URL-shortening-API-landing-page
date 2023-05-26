@@ -29,7 +29,7 @@ export default function Nav() {
     <header className="w-full">
       <GeneralHeaderWrapper className="hidden md:flex justify-between mt-10 md:px-[10%]">
         <section className="flex justify-between">
-          <h2 className="font-bold text-[2rem] text-dark-violet ">Shortly</h2>
+          <h2 className="font-bold text-5xl text-dark-violet ">Shortly</h2>
           <ul className="flex justify-between px-8 items-center">
             {
               links.map((link) => (
@@ -48,10 +48,10 @@ export default function Nav() {
           </ul>
         </section>
         <ItemsCenterWrapper className="flex items-center">
-          <Button type="light" className="mr-6 text-base">
+          <Button variant="light" className="mr-6 text-base">
             Login
           </Button>
-          <Button type="info" className="px-6 py-2 rounded-full text-base">
+          <Button variant="info" className="px-6 py-2 rounded-full text-base">
             Sign Up
           </Button>
         </ItemsCenterWrapper>
