@@ -37,11 +37,10 @@ export default function Home() {
         <UrlList urls={urls} />
         <SpacingSm />
         <section className="w-full flex flex-col items-center text-center gap-4">
-          <h3 className="text-dark-violet text-3xl font-bold">Advanced statistics</h3>
+          <h3 className="text-dark-violet text-4xl font-bold">Advanced statistics</h3>
           <p className="max-w-lg text-lg text-grayish-violet">Track how your links are performing across the web with our advanced statistics
             dashboard.</p>
           <SpacingSm />
-
         </section>
         <SpacingMd />
         <div className="relative w-full">

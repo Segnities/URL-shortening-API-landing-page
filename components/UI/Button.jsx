@@ -20,7 +20,6 @@ const Button = (props) => {
       obj[key] = propsCopy[key];
       return obj;
     }, {});
-  console.log(restProps);
 
   return (
     <button className={rootStyles} {...restProps}>

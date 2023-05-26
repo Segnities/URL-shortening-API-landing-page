@@ -34,7 +34,7 @@ export default function ShortForm({ urls, setUrls }) {
             isSubmitting, errors,
           }) => (
             <Form className="w-full h-full flex flex-col justify-center">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+              <div className="relative top-3 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
                 <div className="w-11/12 md:w-8/12 flex flex-col">
                   <Field
                     name="url"
@@ -48,12 +48,12 @@ export default function ShortForm({ urls, setUrls }) {
                   variant="info"
                   disabled={isSubmitting}
                   type="submit"
-                  className="w-11/12 md:w-1/6 text-base md:text-lg lg:text-xl font-semibold p-2 md:p-3 lg:p-5 rounded-xl hover:bg-cyan-300 bg-cyan-500 text-white cursor-pointer disabled:bg-transparent disabled:border-white disabled:border-2"
+                  className="w-11/12 md:w-1/6 text-base md:text-lg lg:text-xl font-semibold p-2  lg:p-5 rounded-xl hover:bg-cyan-300 bg-cyan-500 text-white cursor-pointer disabled:bg-transparent disabled:border-white disabled:border-2"
                 >
                   {isSubmitting ? 'Submitting...' : 'Shorten it!'}
                 </Button>
               </div>
-              <p className={`hover md:block md:ml-24 mt-2 text-center md:text-left text- ${errors.url ? 'text-pink-500' : 'text-transparent'} text-sm`}>{errors.url ?? 'No Error'}</p>
+              <p className={`relative right-8 lg:right-0 top-2 italic hover md:block md:ml-24 mt-2 text-center md:text-left ${errors.url ? 'text-pink-500' : 'text-transparent'} text-sm`}>{errors.url ?? 'No Error'}</p>
             </Form>
           )
         }
