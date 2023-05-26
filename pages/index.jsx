@@ -12,6 +12,7 @@ import LightSlateWrapper from '../components/UI/LightSlateWrapper';
 import SpacingSm from '../components/UI/SpacingSm';
 import SpacingMd from '../components/UI/SpacingMd';
 import FormWrapper from '../components/UI/FormWrapper';
+import AdvancedStatistics from '../components/AdvancedStatistics';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -36,16 +37,7 @@ export default function Home() {
         </FormWrapper>
         <UrlList urls={urls} />
         <SpacingSm />
-        <section className="w-full flex flex-col items-center text-center gap-4">
-          <h3 className="text-dark-violet text-4xl font-bold">Advanced statistics</h3>
-          <p className="max-w-lg text-lg text-grayish-violet">Track how your links are performing across the web with our advanced statistics
-            dashboard.</p>
-          <SpacingSm />
-        </section>
-        <SpacingMd />
-        <div className="relative w-full">
-          <div className="w-full h-2 bg-cyan-500" />
-        </div>
+        <AdvancedStatistics />
       </LightSlateWrapper>
     </div>
   );

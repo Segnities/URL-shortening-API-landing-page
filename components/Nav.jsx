@@ -1,26 +1,12 @@
 import { useState } from 'react';
-import { RxHamburgerMenu } from 'react-icons/rx';
+
 import GeneralHeaderWrapper from './UI/GeneralHeaderWrapper';
 import ItemsCenterWrapper from './UI/ItemsCenterWrapper';
 import Button from './UI/Button';
 import MobileHeader from './UI/MobileHeader';
 import MobileMenu from './UI/MobileMenu';
 
-const links = [
-  {
-    id: 0,
-    title: 'features',
-  },
-  {
-    id: 1,
-    title: 'pricing',
-  },
-  {
-    id: 2,
-    title: 'resources',
-  },
-
-];
+import links from '../data/links';
 
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
