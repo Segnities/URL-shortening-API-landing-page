@@ -21,7 +21,7 @@ export default function ShortForm({ urls, setUrls }) {
     }
   };
   return (
-    <div className="w-9/12 h-full rounded-lg bg-dark-violet bg-cover bg-[url('/img/bg-shorten-mobile.svg')] md:bg-[url('/img/bg-shorten-desktop.svg')]">
+    <div className="w-11/12 md:w-9/12 h-full rounded-lg bg-dark-violet bg-cover bg-[url('/img/bg-shorten-mobile.svg')] md:bg-[url('/img/bg-shorten-desktop.svg')]">
       <Formik
         initialValues={{
           url: '',

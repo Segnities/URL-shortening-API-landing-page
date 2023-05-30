@@ -31,10 +31,10 @@ const MobileMenu = (props) => {
               </ul>
               <hr className="w-full border-[#9e9aa7]" />
               <div className="flex flex-col w-full">
-                <Button type="light" className="text-base p-3 my-1 hover:text-white">
+                <Button variant="light" className="text-base p-3 my-1 hover:text-white">
                   Login
                 </Button>
-                <Button type="info" className="w-full rounded-full px-6 py-2 my-1">
+                <Button variant="info" className="w-full rounded-full px-6 py-2 my-1">
                   Sign Up
                 </Button>
               </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const SpacingMd = () => {
   return (
-    <div className="h-48 md:h-32"/>
+    <div className="h-24 md:h-32"/>
   );
 };
 

@@ -17,7 +17,7 @@ export default function Discover() {
           detailed insights on how your links are performing.</p>
         <Button
           variant="info"
-          className="mt-8 text-lg sm:py-3 py-4 px-14 sm:px-10 bg-cyan-500 hover:bg-sky-400 text-white font-bold rounded-[2rem]">
+          className="mt-8 text-lg px-4 py-3 sm:px-6  sm:py-5 md:py-4 md:px-14 sm:px-10 bg-cyan-500 hover:bg-sky-400 text-white font-bold rounded-[2rem]">
           Get started
         </Button>
       </div>

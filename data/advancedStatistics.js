@@ -18,3 +18,5 @@ const advancedStatistics = [
     img: "/img/icon-fully-customizable.svg",
   }
 ];
+
+export default advancedStatistics;
