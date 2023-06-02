@@ -37,7 +37,7 @@ const footerLinks = [
   },
   {
     id: "company",
-    title: "company",
+    title: "Company",
     links: [
       {
         id: "about",

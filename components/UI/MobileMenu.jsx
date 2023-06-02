@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
+import links from '../../data/links';
+
 const MobileMenu = (props) => {
   const {
     showMenu,
-    links,
   } = props;
   return (
-    <>
+    <React.Fragment>
       {
         showMenu && (
           <div
@@ -31,9 +32,9 @@ const MobileMenu = (props) => {
                   }
                 </ul>
               </nav>
-              <hr className="w-full border-[#9e9aa7]"/>
+              <hr className="w-full border-[#9e9aa7]" />
               <div className="flex flex-col w-full">
-                <Button variant="light" className="text-base p-3 my-1 hover:text-white">
+                <Button variant="light" className="text-base p-3 my-1 text-white  hover:text-grayish-violet">
                   Login
                 </Button>
                 <Button variant="info" className="w-full rounded-full px-6 py-2 my-1">
@@ -44,15 +45,11 @@ const MobileMenu = (props) => {
           </div>
         )
       }
-    </>
+    </React.Fragment>
   );
 };
 
 MobileMenu.propTypes = {
-  links: PropTypes.arrayOf({
-    id: PropTypes.number,
-    title: PropTypes.string,
-  }),
   showMenu: PropTypes.bool,
 };
 export default MobileMenu;

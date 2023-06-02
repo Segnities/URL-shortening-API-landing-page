@@ -7,6 +7,7 @@ import MobileHeader from './UI/MobileHeader';
 import MobileMenu from './UI/MobileMenu';
 
 import links from '../data/links';
+import DesktopMenu from './UI/DesktopMenu';
 
 export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,27 +17,13 @@ export default function Nav() {
       <GeneralHeaderWrapper className="hidden md:flex justify-between mt-10 md:px-[10%]">
         <section className="flex justify-between">
           <h2 className="font-bold text-5xl text-dark-violet">Shortly</h2>
-          <nav>
-            <ul className="flex justify-between px-8 items-center">
-              {
-                links.map((link) => (
-                  <li
-                    className="text-base first-letter:uppercase font-semibold  cursor-pointer mx-3 hover:text-very-dark-violet "
-                    key={link.id}
-                  >
-                    <a
-                      href="#"
-                      className="text-base text-grayish-violet font-semibold cursor-pointer hover:text-dark-violet first-letter:uppercase">
-                      {link.title}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
+          <DesktopMenu />
         </section>
         <ItemsCenterWrapper className="flex items-center">
-          <Button variant="light" className="mr-6 text-base">
+          <Button
+            variant="light"
+            className="mr-6 text-base text-grayish-violet hover:text-very-dark-violet"
+          >
             Login
           </Button>
           <Button variant="info" className="px-6 py-2 rounded-full text-base">

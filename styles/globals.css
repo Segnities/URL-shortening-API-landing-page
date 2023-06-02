@@ -28,6 +28,10 @@
         color: hsl(260, 8%, 14%);
     }
 
+    .bg-very-dark-violet {
+        background-color: hsl(260, 8%, 14%);
+    }
+
     .bg-dark-violet {
         background-color: hsl(257, 27%, 26%);
     }

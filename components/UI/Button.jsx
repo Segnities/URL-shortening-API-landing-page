@@ -8,7 +8,7 @@ const Button = (props) => {
     children
   } = props;
   const rootStyles = classNames(props?.className, {
-    'text-grayish-violet hover:text-very-dark-violet font-bold bg-transparent': variant == 'light',
+    'font-bold bg-transparent': variant == 'light',
     'bg-cyan-400 hover:bg-cyan-200 text-white font-bold ': variant == 'info'
   });
   const notAllowed = ['variant', 'children', 'className'];
