@@ -28,6 +28,7 @@ export default function Home() {
         <title>URL shortening</title>
       </Head>
       <Nav />
+      <main>
       <SpacingSm />
       <Discover />
       <SpacingMd />
@@ -42,6 +43,7 @@ export default function Home() {
         <SpacingMd />
         <BoostLinks />
       </LightSlateWrapper>
-    </div>
+      </main>
+     </div>
   );
 }
