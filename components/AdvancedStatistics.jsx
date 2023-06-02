@@ -4,6 +4,7 @@ import Image from 'next/image';
 import SpacingSm from './UI/SpacingSm';
 import advancedStatistics from '../data/advancedStatistics';
 import useResizeObserver from '../hooks/useResizeObserver';
+import LineThrough from './UI/LineThrough';
 
 const AdvancedStatistics = () => {
   const { clientWidth } = useResizeObserver('__next');
@@ -12,18 +13,21 @@ const AdvancedStatistics = () => {
     <div className="w-full flex flex-col items-center">
       <section className="w-full flex flex-col items-center text-center gap-4">
         <h3 className="text-dark-violet text-2xl sm:text-3xl lg:text-4xl  font-bold">Advanced
-          statistics</h3>
+          statistics
+        </h3>
         <p className="max-w-lg text-base md:text-lg text-grayish-violet">Track how your links are
           performing
           across
           the web with our advanced statistics
           dashboard.
         </p>
-        <SpacingSm/>
+        <SpacingSm />
       </section>
-      <SpacingSm/>
-      <div className="relative w-11/12 lg:w-3/4 h-auto lg:h-72 flex flex-col items-center">
-        <div className="relative w-full grid lg:grid-flow-col gap-12 lg:gap-8 z-50 grid-auto-flow-row ">
+      <SpacingSm />
+      <div className="relative w-11/12 lg:w-3/4 h-auto lg:h-72 flex flex-col items-center justify-center">
+        <div
+          className="relative w-full grid lg:grid-flow-col gap-12 lg:gap-8 z-50 grid-auto-flow-row "
+        >
           {
             advancedStatistics.map((statistic, idx) => (
               <div
@@ -34,7 +38,8 @@ const AdvancedStatistics = () => {
                 }}
               >
                 <div
-                  className="w-full relative flex lg:justify-start justify-center bottom-14 md:bottom-16">
+                  className="w-full relative flex lg:justify-start justify-center bottom-14 md:bottom-16"
+                >
                   <div
                     className="w-24 h-24 relative rounded-full bg-violet-950 flex items-center justify-center"
                   >
@@ -56,7 +61,7 @@ const AdvancedStatistics = () => {
             ))
           }
         </div>
-        <div className="w-[32rem] sm:w-[27rem] md:w-full h-2 bg-cyan-500 absolute top-1/2 lg:top-1/3  lg:rotate-0 rotate-90" />
+        <LineThrough />
       </div>
     </div>
   );

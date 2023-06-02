@@ -13,6 +13,7 @@ import SpacingSm from '../components/UI/SpacingSm';
 import SpacingMd from '../components/UI/SpacingMd';
 import FormWrapper from '../components/UI/FormWrapper';
 import AdvancedStatistics from '../components/AdvancedStatistics';
+import BoostLinks from '../components/BoostLinks';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -38,6 +39,8 @@ export default function Home() {
         <UrlList urls={urls} />
         <SpacingSm />
         <AdvancedStatistics />
+        <SpacingMd />
+        <BoostLinks />
       </LightSlateWrapper>
     </div>
   );

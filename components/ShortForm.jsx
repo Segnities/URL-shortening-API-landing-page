@@ -7,6 +7,7 @@ import {
 } from 'prop-types';
 import getShortenUrls from '../lib/getShortenUrls';
 import Button from './UI/Button';
+import ShortenBg from './UI/ShortenBg';
 
 const validationSchema = Yup.object({
   url: Yup.string().url('Invalid URL').required('Please add a link'),
@@ -21,7 +22,7 @@ export default function ShortForm({ urls, setUrls }) {
     }
   };
   return (
-    <div className="w-11/12 md:w-9/12 h-full rounded-lg bg-dark-violet bg-cover bg-[url('/img/bg-shorten-mobile.svg')] md:bg-[url('/img/bg-shorten-desktop.svg')]">
+    <ShortenBg className="w-11/12 md:w-9/12 h-full rounded-lg">
       <Formik
         initialValues={{
           url: '',
@@ -38,7 +39,7 @@ export default function ShortForm({ urls, setUrls }) {
                 <div className="w-11/12 md:w-8/12 flex flex-col">
                   <Field
                     name="url"
-                    className={`p-3 lg:text-xl lg:p-5 outline-offset-0 outline-none rounded-lg ${errors.url && 'outline outline-2 focus-visible:outline-[3px] outline-pink-500'}`}
+                    className={`p-3 lg:text-xl lg:p-4 outline-offset-0 outline-none rounded-lg ${errors.url && 'outline outline-2 focus-visible:outline-[3px] outline-pink-500'}`}
                     type="url"
                     id="shorten-url"
                     placeholder="Shorten a link here..."
@@ -48,7 +49,7 @@ export default function ShortForm({ urls, setUrls }) {
                   variant="info"
                   disabled={isSubmitting}
                   type="submit"
-                  className="w-11/12 md:w-1/6 text-base md:text-lg lg:text-xl font-semibold p-2  lg:p-5 rounded-xl hover:bg-cyan-300 bg-cyan-500 text-white cursor-pointer disabled:bg-transparent disabled:border-white disabled:border-2"
+                  className="w-11/12 md:w-1/6 text-base md:text-lg lg:text-xl font-semibold p-2  lg:p-4 rounded-xl hover:bg-cyan-300 bg-cyan-500 text-white cursor-pointer disabled:bg-transparent disabled:border-white disabled:border-2"
                 >
                   {isSubmitting ? 'Submitting...' : 'Shorten it!'}
                 </Button>
@@ -58,7 +59,7 @@ export default function ShortForm({ urls, setUrls }) {
           )
         }
       </Formik>
-    </div>
+    </ShortenBg>
   );
 }
 
