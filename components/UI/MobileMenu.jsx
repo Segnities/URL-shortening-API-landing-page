@@ -1,28 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from './Button';
 
 import links from '../../data/links';
 
-const MobileMenu = (props) => {
+function MobileMenu(props) {
   const {
     showMenu,
   } = props;
+  const emptyHref = '#';
   return (
-    <React.Fragment>
+    <>
       {
         showMenu && (
           <div
-            className="absolute top-12 md:hidden flex w-full items-center  transition-opacity animate-visible-appear justify-center">
+            className="absolute top-12 md:hidden flex w-full items-center  transition-opacity animate-visible-appear justify-center"
+          >
             <div
-              className="relative flex flex-col w-[80%] justify-center py-5 px-10 rounded-lg z-50 bg-[#3b3054] items-center mt-5">
+              className="relative flex flex-col w-[80%] justify-center py-5 px-10 rounded-lg z-50 bg-[#3b3054] items-center mt-5"
+            >
               <nav>
                 <ul>
                   {
                     links.map((link) => (
                       <li key={link.id} className="flex justify-center items-center p-3">
                         <a
-                          href="#"
+                          href={emptyHref}
                           className="text-base text-white font-semibold cursor-pointer hover:text-grayish-violet first-letter:uppercase"
                         >
                           {link.title}
@@ -45,11 +47,8 @@ const MobileMenu = (props) => {
           </div>
         )
       }
-    </React.Fragment>
+    </>
   );
-};
+}
 
-MobileMenu.propTypes = {
-  showMenu: PropTypes.bool,
-};
 export default MobileMenu;
