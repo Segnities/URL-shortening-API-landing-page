@@ -1,59 +1,59 @@
 const footerLinks = [
   {
-    id: "features",
-    title: "Features",
+    id: 'features',
+    title: 'Features',
     links: [
       {
-        id: "link-shortening",
-        title: "Link Shortening",
+        id: 'link-shortening',
+        title: 'Link Shortening',
       },
       {
-        id: "branded-links",
-        title: "Branded Links",
+        id: 'branded-links',
+        title: 'Branded Links',
       },
       {
-        id: "analytic",
-        title: "Analytic",
+        id: 'analytic',
+        title: 'Analytic',
       },
     ],
   },
   {
-    id: "resources",
-    title: "Resourses",
+    id: 'resources',
+    title: 'Resourses',
     links: [
       {
-        id: "blog",
-        title: "Blog"
+        id: 'blog',
+        title: 'Blog',
       },
       {
-        id: "developers",
-        title: "Developers"
+        id: 'developers',
+        title: 'Developers',
       },
       {
-        id: "support",
-        title: "Support"
+        id: 'support',
+        title: 'Support',
       },
     ],
   },
   {
-    id: "company",
-    title: "Company",
+    id: 'company',
+    title: 'Company',
     links: [
       {
-        id: "about",
-        title: "About",
+        id: 'about',
+        title: 'About',
       },
       {
-        id: "out-team",
-        title: "Out Team",
+        id: 'out-team',
+        title: 'Out Team',
       },
       {
-        id: "careers",
-        title: "Careers",
+        id: 'careers',
+        title: 'Careers',
       },
       {
-        id: "contact",
-        title: "Contact",
+        id: 'contact',
+        title: 'Contact',
       },
     ],
   },
