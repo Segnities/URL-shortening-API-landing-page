@@ -1,8 +1,7 @@
 import React from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import PropTypes from 'prop-types';
 
-const MobileHeader = (props) => {
+function MobileHeader(props) {
   const { showMenu, setShowMenu } = props;
   return (
     <div className="flex md:hidden justify-between px-10 max-h-28 mt-5 items-center">
@@ -19,11 +18,6 @@ const MobileHeader = (props) => {
       </div>
     </div>
   );
-};
-
-MobileHeader.propTypes = {
-  showMenu: PropTypes.bool,
-  setShowMenu: PropTypes.func,
 }
 
 export default MobileHeader;

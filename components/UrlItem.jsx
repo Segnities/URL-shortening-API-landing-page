@@ -1,10 +1,9 @@
-import { shape, string } from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function UrlItem({ url }) {
   const [copied, setCopied] = useState(false);
 
-  const copyToClipboard = (e) => {
+  const copyToClipboard = () => {
     setCopied(true);
     navigator.clipboard.writeText(url?.short_link);
   };
@@ -36,18 +35,3 @@ export default function UrlItem({ url }) {
     </section>
   );
 }
-
-UrlItem.propTypes = {
-  url: shape({
-    code: string.isRequired,
-    short_link: string.isRequired,
-    full_short_link: string.isRequired,
-    short_link2: string.isRequired,
-    full_short_link2: string.isRequired,
-    short_link3: string.isRequired,
-    full_short_link3: string.isRequired,
-    share_link: string.isRequired,
-    full_share_link: string.isRequired,
-    original_link: string.isRequired,
-  }).isRequired,
-};
