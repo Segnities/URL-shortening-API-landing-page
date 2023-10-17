@@ -8,11 +8,25 @@ const User = db.define('user', {
 
 const ShrtList = db.define('shrt_list', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING}
+    title: {type: DataTypes.STRING},
+    userId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: User,
+            key: 'id'
+        }
+    }
 });
 
 const ShrtUrl = db.define("shrt_url", {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    listId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: ShrtList,
+            key: 'id'
+        }
+    }
 });
 
 User.hasOne(ShrtList);
