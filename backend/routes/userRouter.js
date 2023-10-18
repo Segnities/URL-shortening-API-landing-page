@@ -2,10 +2,13 @@ const express = require('express');
 
 const router = express.Router();
 
-router.post("/login", ()=> {
+router.post("/signup", ()=> {
     console.log('Login')
 });
 
+router.post("/login", ()=> {
+
+});
 router.get("/auth", ()=> {
     console.log("Auth")
 });

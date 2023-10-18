@@ -1,10 +1,7 @@
-import { Formik, Form, Field } from 'formik';
+import { Field, Form, Formik } from 'formik';
 
 import * as Yup from 'yup';
-import { isUndefined } from 'lodash';
-import {
-  arrayOf, shape, func, string,
-} from 'prop-types';
+import { arrayOf, func, shape, string, } from 'prop-types';
 import getShortenUrls from '../lib/getShortenUrls';
 import Button from './UI/Button';
 import ShortenBg from './UI/ShortenBg';
@@ -13,11 +10,12 @@ const validationSchema = Yup.object({
   url: Yup.string().url('Invalid URL').required('Please add a link'),
 });
 
-export default function ShortForm({ urls, setUrls }) {
-  const handleSubmit = async (values, { resetForm }) => {
+export default function ShortForm({ setUrls }) {
+  const handleSubmit = async (values, { resetForm}) => {
     const shortenUrl = await getShortenUrls(values.url);
-    if (isUndefined(urls.find((url) => url.original_link === shortenUrl.result.original_link))) {
-      setUrls([...urls, shortenUrl.result]);
+
+    if (shortenUrl) {
+      setUrls(prev => [...prev, shortenUrl]);
       resetForm();
     }
   };
@@ -64,16 +62,5 @@ export default function ShortForm({ urls, setUrls }) {
 }
 
 ShortForm.propTypes = {
-  urls: arrayOf(shape({
-    code: string.isRequired,
-    short_link: string.isRequired,
-    full_short_link: string.isRequired,
-    short_link2: string.isRequired,
-    full_short_link2: string.isRequired,
-    short_link3: string.isRequired,
-    full_short_link3: string.isRequired,
-    share_link: string.isRequired,
-    full_share_link: string.isRequired,
-  })).isRequired,
   setUrls: func.isRequired,
 };

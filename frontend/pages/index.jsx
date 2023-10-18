@@ -36,7 +36,7 @@ export default function Home() {
         <LightSlateWrapper className="w-full bg-slate-200">
           <FormWrapper
             className="relative bottom-24 w-full h-44 flex flex-1 justify-center items-center">
-            <ShortForm urls={urls} setUrls={setUrls}/>
+            <ShortForm setUrls={setUrls}/>
           </FormWrapper>
           <UrlList urls={urls} />
           <SpacingSm />

@@ -1,13 +1,9 @@
 const express = require('express');
-
 const router = express.Router();
 
-router.post("/create", ()=> {
-    console.log('Create new shrt link');
-});
+const ShrtUrlsController = require("../controllers/shrtUrlsController");
 
-router.get("/", ()=> {
-    console.log("Get all links");
-});
+router.post("/create", ShrtUrlsController.create);
+router.get("/", ()=> ShrtUrlsController.fetchAllByUserId);
 
 module.exports = router;

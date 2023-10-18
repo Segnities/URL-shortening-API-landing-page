@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import UrlItem from './UrlItem';
 
 export default function UrlList({ urls }) {
@@ -5,7 +6,7 @@ export default function UrlList({ urls }) {
     <div className="flex flex-col gap-2 items-center justify-center">
       {
         urls.map((url) => (
-          <UrlItem key={url?.code} url={url} />
+          <UrlItem key={uuidv4()} url={url} />
         ))
       }
     </div>
