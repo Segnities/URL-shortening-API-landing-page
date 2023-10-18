@@ -20,6 +20,8 @@ const ShrtList = db.define('shrt_list', {
 
 const ShrtUrl = db.define("shrt_url", {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    original_url: {type: DataTypes.STRING},
+    shrt_url: {type: DataTypes.STRING},
     listId: {
         type: DataTypes.INTEGER,
         references: {
