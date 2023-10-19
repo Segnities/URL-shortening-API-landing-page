@@ -4,7 +4,6 @@ import Head from 'next/head';
 
 import { Poppins } from 'next/font/google';
 
-import Nav from '../components/Nav';
 import Discover from '../components/Discover';
 import ShortForm from '../components/ShortForm';
 import UrlList from '../components/UrlList';
@@ -14,7 +13,6 @@ import SpacingMd from '../components/UI/SpacingMd';
 import FormWrapper from '../components/UI/FormWrapper';
 import AdvancedStatistics from '../components/AdvancedStatistics';
 import BoostLinks from '../components/BoostLinks';
-import Footer from '../components/Footer';
 import DefaultLayout from '../components/UI/DefaultLayout';
 
 const poppins = Poppins({

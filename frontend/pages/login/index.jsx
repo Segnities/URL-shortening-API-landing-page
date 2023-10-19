@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 
 import { Form, Formik, Field } from 'formik';
 import * as Yup from 'yup';
 
 import DefaultLayout from '../../components/UI/DefaultLayout';
 import SpacingSm from '../../components/UI/SpacingSm';
-import LightSlateWrapper from '../../components/UI/LightSlateWrapper';
 
 const validationSchema = Yup.object()
   .shape({
@@ -24,6 +24,10 @@ export default function Login() {
     setIsSubmitted(true);
   };
   return (
+    <>
+      <Head>
+        <title>Login</title>
+      </Head>
     <DefaultLayout>
       <SpacingSm/>
       <div className="flex justify-center items-center w-full mb-10">
@@ -38,25 +42,25 @@ export default function Login() {
       >
         {
           ({errors}) => (
-            <Form autoComplete="off" className="text-white rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg w-2/5 sm:w-3/5 p-5 bg-gradient-to-r from-cyan-400  to-indigo-600">
+            <Form autoComplete="off" className="rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg w-2/5 sm:w-3/5 p-5 bg-gradient-to-r from-cyan-400  to-indigo-600">
               {((errors.email || errors.password) && isSubmitted) && (
                 <div className="flex w-full justify-center my-5">
                   <h3 className="text-lg transition-opacity duration-100 ease-in text-red-600 font-semibold">Wrong email or password</h3>
                 </div>
               )}
               <div className="flex flex-col">
-                <label htmlFor="email" className="text-sm font-bold my-1">Email address</label>
+                <label htmlFor="email" className="text-sm text-white  font-bold my-1">Email address</label>
                 <Field
                   type="text"
                   id="email"
                   autoComplete="off"
                   name="email"
                   placeholder="Enter your email address"
-                  className="bg-transparent text-base normal-case my-1 line tracking-normal p-3 border-[1px]  focus-visible:border-[3px] border-gray-800"
+                  className="text-base normal-case my-1 line tracking-normal p-3 border-[1px]  focus-visible:border-[3px] border-gray-800"
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="password" className="text-sm font-bold my-1">Password</label>
+                <label htmlFor="password" className="text-sm font-bold my-1 text-white ">Password</label>
                 <Field
                   type="password"
                   name="password"
@@ -83,5 +87,6 @@ export default function Login() {
       </Formik>
       </div>
     </DefaultLayout>
+    </>
   );
 }
