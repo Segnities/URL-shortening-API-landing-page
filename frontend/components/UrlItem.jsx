@@ -25,7 +25,7 @@ export default function UrlItem({ url }) {
         <button
           type="button"
           onClick={copyToClipboard}
-          className={`w-36 p-3 text-white rounded-md ${copied ? 'bg-violet-700' : 'bg-cyan-500 hover:bg-cyan-300'}`}
+          className={`lg:w-36 md:w-32 sm:w-24 w-16 p-3 text-white rounded-md ${copied ? 'bg-violet-700' : 'bg-cyan-500 hover:bg-cyan-300'}`}
         >
           Cop
           {copied ? 'ied!' : 'y'}

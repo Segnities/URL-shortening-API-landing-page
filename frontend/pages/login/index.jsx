@@ -1,7 +1,9 @@
+import DefaultLayout from '../../components/UI/DefaultLayout';
+
 export default function Login() {
   return (
-    <div>
+    <DefaultLayout>
       <p>Login</p>
-    </div>
+    </DefaultLayout>
   );
 }

@@ -1,7 +1,9 @@
+import DefaultLayout from '../../components/UI/DefaultLayout';
+
 export default function Signup() {
   return (
-    <div>
+    <DefaultLayout>
       <p>Signup</p>
-    </div>
+    </DefaultLayout>
   );
 }

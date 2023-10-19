@@ -15,6 +15,7 @@ import FormWrapper from '../components/UI/FormWrapper';
 import AdvancedStatistics from '../components/AdvancedStatistics';
 import BoostLinks from '../components/BoostLinks';
 import Footer from '../components/Footer';
+import DefaultLayout from '../components/UI/DefaultLayout';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -28,8 +29,7 @@ export default function Home() {
       <Head>
         <title>URL shortening</title>
       </Head>
-      <Nav />
-      <main>
+      <DefaultLayout>
         <SpacingSm/>
         <Discover/>
         <SpacingMd/>
@@ -38,14 +38,13 @@ export default function Home() {
             className="relative bottom-24 w-full h-44 flex flex-1 justify-center items-center">
             <ShortForm setUrls={setUrls}/>
           </FormWrapper>
-          <UrlList urls={urls} />
-          <SpacingSm />
-          <AdvancedStatistics />
-          <SpacingMd />
-          <BoostLinks />
+          <UrlList urls={urls}/>
+          <SpacingSm/>
+          <AdvancedStatistics/>
+          <SpacingMd/>
+          <BoostLinks/>
         </LightSlateWrapper>
-      </main>
-      <Footer />
+      </DefaultLayout>
     </div>
   );
 }

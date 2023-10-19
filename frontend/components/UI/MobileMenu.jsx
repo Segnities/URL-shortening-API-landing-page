@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 import links from '../../data/links';
+import Link from 'next/link';
 
 function MobileMenu(props) {
   const {
@@ -34,14 +35,21 @@ function MobileMenu(props) {
                   }
                 </ul>
               </nav>
-              <hr className="w-full border-[#9e9aa7]" />
+              <hr className="w-full border-[#9e9aa7]"/>
               <div className="flex flex-col w-full">
-                <Button variant="light" className="text-base p-3 my-1 text-white  hover:text-grayish-violet">
-                  Login
-                </Button>
-                <Button variant="info" className="w-full rounded-full px-6 py-2 my-1">
-                  Sign Up
-                </Button>
+                <Link href="/login">
+                  <Button
+                    variant="light"
+                    className="text-base w-full p-3 my-1 text-white  hover:text-grayish-violet"
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button variant="info" className="w-full rounded-full px-6 py-2 my-1">
+                    Sign Up
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
