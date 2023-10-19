@@ -18,11 +18,10 @@ class ShrtUrlsController {
             next(APIError.badRequest(e.message))
         }
     }
-
     async create(req, res, next) {
         try {
-            const { listId, original_url, shrt_url } = req.body;
-            const shrtUrl = await ShrtUrl.create({listId, original_url, shrt_url});
+            const { listId, original_url, short_url } = req.body;
+            const shrtUrl = await ShrtUrl.create({listId, original_url, short_url});
             return res.json(shrtUrl);
         } catch (e) {
             next(APIError.badRequest(e.message));
