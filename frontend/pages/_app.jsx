@@ -3,11 +3,17 @@
 import { StrictMode } from 'react';
 
 import '../styles/globals.css';
+import AuthStateLayout from '../components/AuthStateLayout';
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps
+}) {
   return (
     <StrictMode>
-      <Component {...pageProps} />
+      <AuthStateLayout>
+        <Component {...pageProps} />
+      </AuthStateLayout>
     </StrictMode>
   );
 }

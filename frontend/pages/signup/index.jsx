@@ -30,7 +30,6 @@ const validate = (values) => {
   } else if (!values.confirmPassword) {
     errors.confirmPassword = 'Confirm password is required';
   }
-
   return errors;
 };
 
@@ -42,8 +41,7 @@ export default function Signup() {
       const password = values.password;
 
       await createUserWithEmailAndPassword(auth, email, password);
-      await router.push("/");
-
+      return await router.push("/");
     } catch (e) {
       console.log(e);
     }

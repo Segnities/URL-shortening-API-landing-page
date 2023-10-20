@@ -1,0 +1,23 @@
+import { useEffect } from 'react';
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "../firebase";
+export default function AuthStateLayout({children}) {
+    useEffect(()=> {
+      onAuthStateChanged(auth, (user)=> {
+        if (user) {
+          const currentUser = auth.currentUser;
+          if (currentUser) {
+            console.log(currentUser);
+          }
+        } else {
+          console.log('User logout');
+        }
+
+      });
+    }, []);
+   return (
+     <>
+       {children}
+     </>
+   )
+}

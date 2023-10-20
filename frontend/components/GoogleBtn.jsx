@@ -1,8 +1,19 @@
+import {GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence} from "firebase/auth";
+import {useRouter} from "next/router";
 import { FcGoogle } from 'react-icons/fc';
+import { auth } from '../firebase';
 
 export default function GoogleBtn() {
-  const handleClick = () => {
-
+  const googleProvider = new GoogleAuthProvider();
+  const router = useRouter();
+  const handleClick = async () => {
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+      await signInWithPopup(auth, googleProvider);
+      return await router.push("/");
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <button
