@@ -12,7 +12,7 @@ export default function AuthMethodsLayout({ children }) {
         <hr role="presentation" className="flex-1 border-[1px] border-solid border-gray-300"/>
       </div>
       <div className="mt-2 mb-1">
-        <h2 className="text-xl font-bold text-center">Register via email</h2>
+        <h2 className="text-xl font-bold text-center">Continue via email</h2>
       </div>
       <div className="w-full flex flex-col flex-auto mt-4 px-4 sm:px-0">
         {children}

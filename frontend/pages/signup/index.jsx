@@ -41,7 +41,7 @@ export default function Signup() {
       const password = values.password;
 
       await createUserWithEmailAndPassword(auth, email, password);
-      return await router.push("/");
+      return await router.push('/');
     } catch (e) {
       console.log(e);
     }
@@ -70,8 +70,9 @@ export default function Signup() {
                   errors,
                   touched,
                 }) => (
-                  <Form autoComplete="off"
-                        className="rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg w-full sm:w-3/5 p-5 bg-gradient-to-r from-cyan-400 to-indigo-600">
+                  <Form
+                    autoComplete="off"
+                    className="rounded-tl-3xl rounded-br-3xl rounded-tr-lg rounded-bl-lg w-full sm:w-3/5 p-5 bg-gradient-to-r from-cyan-400 to-indigo-600">
                     <div className="flex flex-col">
                       <label htmlFor="email" className="text-sm text-white font-bold my-1">Enter
                         your email

@@ -8,11 +8,13 @@ export default function AuthStateLayout({children}) {
           const currentUser = auth.currentUser;
           if (currentUser) {
             console.log(currentUser);
+            console.log(currentUser.email);
+            console.log(currentUser.providerId);
+            console.log(currentUser.metadata.creationTime);
           }
         } else {
           console.log('User logout');
         }
-
       });
     }, []);
    return (
