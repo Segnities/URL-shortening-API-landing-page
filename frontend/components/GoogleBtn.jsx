@@ -14,7 +14,6 @@ export default function GoogleBtn() {
       const userCredential = await signInWithPopup(auth, googleProvider);
       const user =  userCredential.user;
       dispatch(signUp(JSON.stringify(user)));
-      console.log(user);
       return await router.push("/");
     } catch (e) {
       const credential = GoogleAuthProvider.credentialFromError(e);

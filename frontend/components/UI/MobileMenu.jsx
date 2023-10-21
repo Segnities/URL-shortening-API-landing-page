@@ -3,12 +3,18 @@ import Button from './Button';
 
 import links from '../../data/links';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import SignOut from '../SignOut';
 
 function MobileMenu(props) {
   const {
     showMenu,
   } = props;
   const emptyHref = '#';
+  const {
+    isAuth,
+  } = useSelector(state => state.auth);
+
   return (
     <>
       {
@@ -37,19 +43,29 @@ function MobileMenu(props) {
               </nav>
               <hr className="w-full border-[#9e9aa7]"/>
               <div className="flex flex-col w-full">
-                <Link href="/login">
-                  <Button
-                    variant="light"
-                    className="text-base w-full p-3 my-1 text-white  hover:text-grayish-violet"
-                  >
-                    Login
-                  </Button>
-                </Link>
-                <Link href="/signup">
-                  <Button variant="info" className="w-full rounded-full px-6 py-2 my-1">
-                    Sign Up
-                  </Button>
-                </Link>
+                {
+                  isAuth ? (
+                    <div className="flex flex-col items-center gap-4 py-2">
+                      <SignOut/>
+                    </div>
+                  ) : (
+                    <>
+                      <Link href="/login">
+                        <Button
+                          variant="light"
+                          className="text-base w-full p-3 my-1 text-white  hover:text-grayish-violet"
+                        >
+                          Login
+                        </Button>
+                      </Link>
+                      <Link href="/signup">
+                        <Button variant="info" className="w-full rounded-full px-6 py-2 my-1">
+                          Sign Up
+                        </Button>
+                      </Link>
+                    </>
+                  )
+                }
               </div>
             </div>
           </div>
