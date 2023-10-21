@@ -2,16 +2,23 @@ import {GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersist
 import {useRouter} from "next/router";
 import { FcGoogle } from 'react-icons/fc';
 import { auth } from '../firebase';
-
+import { useDispatch } from "react-redux";
+import { signUp } from '../store/reducer/auth';
 export default function GoogleBtn() {
   const googleProvider = new GoogleAuthProvider();
   const router = useRouter();
+  const dispatch = useDispatch();
   const handleClick = async () => {
     try {
       await setPersistence(auth, browserLocalPersistence);
-      await signInWithPopup(auth, googleProvider);
+      const userCredential = await signInWithPopup(auth, googleProvider);
+      const user =  userCredential.user;
+      dispatch(signUp(JSON.stringify(user)));
+      console.log(user);
       return await router.push("/");
     } catch (e) {
+      const credential = GoogleAuthProvider.credentialFromError(e);
+      console.log(credential);
       console.log(e);
     }
   };

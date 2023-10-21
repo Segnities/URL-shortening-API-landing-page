@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types  */
 /* eslint-disable react/jsx-props-no-spreading */
 import { StrictMode } from 'react';
+import { Provider } from 'react-redux';
+
+import AuthStateLayout from '../components/AuthStateLayout';
+
+import {store} from '../store';
 
 import '../styles/globals.css';
-import AuthStateLayout from '../components/AuthStateLayout';
 
 export default function App({
   Component,
@@ -11,9 +15,11 @@ export default function App({
 }) {
   return (
     <StrictMode>
+      <Provider store={store}>
       <AuthStateLayout>
         <Component {...pageProps} />
       </AuthStateLayout>
+      </Provider>
     </StrictMode>
   );
 }

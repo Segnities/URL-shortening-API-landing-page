@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
   setPersistence,
   browserLocalPersistence,
-  inMemoryPersistence
+  browserSessionPersistence
 } from 'firebase/auth';
 
 import Link from 'next/link';
@@ -39,9 +39,9 @@ export default function Login() {
       const rememberMe = values.rememberMe;
 
       if (rememberMe) {
-        await setPersistence(auth, inMemoryPersistence);
-      } else {
         await setPersistence(auth, browserLocalPersistence);
+      } else {
+        await setPersistence(auth, browserSessionPersistence);
       }
       setIsSubmitted(true);
 
@@ -68,7 +68,7 @@ export default function Login() {
                 password: '',
                 rememberMe: false
               }}
-              onSubmit={(values)=> handleSubmit(values)}
+              onSubmit={(values) => handleSubmit(values)}
               validationSchema={validationSchema}
             >
               {
@@ -95,8 +95,9 @@ export default function Login() {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <label htmlFor="password"
-                             className="text-sm font-bold my-1 text-white">Password</label>
+                      <label
+                        htmlFor="password"
+                        className="text-sm font-bold my-1 text-white">Password</label>
                       <Field
                         type="password"
                         name="password"
