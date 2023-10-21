@@ -9,6 +9,8 @@ import SpacingSm from '../../components/UI/SpacingSm';
 import { RiErrorWarningFill } from 'react-icons/ri';
 import AuthMethodsLayout from '../../components/AuthMethodsLayout';
 import { auth } from '../../firebase';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../../store/reducer/auth';
 
 const validate = (values) => {
   const errors = {};
@@ -35,12 +37,16 @@ const validate = (values) => {
 
 export default function Signup() {
   const router = useRouter();
+  const dispatch = useDispatch();
   const handleSubmit = async (values) => {
     try {
       const email = values.email;
       const password = values.password;
 
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      dispatch(signUp(JSON.stringify(user)));
+
       return await router.push('/');
     } catch (e) {
       console.log(e);

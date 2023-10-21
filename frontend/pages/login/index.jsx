@@ -18,6 +18,8 @@ import * as Yup from 'yup';
 import DefaultLayout from '../../components/UI/DefaultLayout';
 import SpacingSm from '../../components/UI/SpacingSm';
 import AuthMethodsLayout from '../../components/AuthMethodsLayout';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../../store/reducer/auth';
 
 const validationSchema = Yup.object()
   .shape({
@@ -32,6 +34,7 @@ const validationSchema = Yup.object()
 export default function Login() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const router = useRouter();
+  const dispatch = useDispatch();
   const handleSubmit = async (values) => {
     try {
       const email = values.email;
@@ -45,7 +48,9 @@ export default function Login() {
       }
       setIsSubmitted(true);
 
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      dispatch(signUp(JSON.stringify(user)));
 
       return await router.push('/');
     } catch (e) {
