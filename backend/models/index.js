@@ -3,7 +3,9 @@ const db = require("../database/postgre");
 
 const User = db.define('user', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    email: {type: DataTypes.STRING, unique: true}
+    email: {type: DataTypes.STRING, unique: true},
+    providerId: {type: DataTypes.STRING},
+    providerName: {type: DataTypes.STRING}
 });
 
 const ShrtList = db.define('shrt_list', {

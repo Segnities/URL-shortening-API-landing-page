@@ -20,6 +20,8 @@ import SpacingSm from '../../components/UI/SpacingSm';
 import AuthMethodsLayout from '../../components/AuthMethodsLayout';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../store/reducer/auth';
+import axios from 'axios';
+import { setUserProvider } from '../../store/reducer/userProvider';
 
 const validationSchema = Yup.object()
   .shape({
@@ -51,6 +53,13 @@ export default function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       dispatch(signUp(JSON.stringify(user)));
+
+      const userProvider = await axios.post("http://localhost:7886/api/user/auth", {
+        email: user.email,
+        providerId: user.providerId,
+        providerName: user.providerData[0].providerId
+      });
+      dispatch(setUserProvider(userProvider));
 
       return await router.push('/');
     } catch (e) {

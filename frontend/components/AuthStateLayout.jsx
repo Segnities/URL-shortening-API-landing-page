@@ -10,7 +10,7 @@ export default function AuthStateLayout({children}) {
             console.log(currentUser);
             console.log(currentUser.email);
             console.log(currentUser.providerId);
-            console.log(currentUser.metadata.creationTime);
+            console.log(currentUser.providerData[0].providerId);
           }
         } else {
           console.log('User logout');

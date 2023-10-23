@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useRouter } from 'next/router';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Form, Formik, Field } from 'formik';
 import Head from 'next/head';
+import axios from 'axios';
 
 import DefaultLayout from '../../components/UI/DefaultLayout';
 import SpacingSm from '../../components/UI/SpacingSm';
@@ -11,6 +12,7 @@ import AuthMethodsLayout from '../../components/AuthMethodsLayout';
 import { auth } from '../../firebase';
 import { useDispatch } from 'react-redux';
 import { signUp } from '../../store/reducer/auth';
+import { setUserProvider } from '../../store/reducer/userProvider';
 
 const validate = (values) => {
   const errors = {};
@@ -45,7 +47,14 @@ export default function Signup() {
 
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+
       dispatch(signUp(JSON.stringify(user)));
+      const userProvider = await axios.post("http://localhost:7886/api/user/signup", {
+        email: user.email,
+        providerId: user.providerId,
+        providerName: user.providerData[0].providerId
+      });
+      dispatch(setUserProvider(userProvider));
 
       return await router.push('/');
     } catch (e) {
