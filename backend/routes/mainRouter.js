@@ -5,6 +5,6 @@ const userRoute = require('./userRouter');
 const shrtLinksRouter = require("./shrtUrlsRouter");
 
 router.use("/user", userRoute);
-router.use("/short-links", shrtLinksRouter);
+router.use("/links", shrtLinksRouter);
 
 module.exports = router;

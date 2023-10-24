@@ -4,6 +4,6 @@ const router = express.Router();
 const ShrtUrlsController = require("../controllers/shrtUrlsController");
 
 router.post("/create", ShrtUrlsController.create);
-router.get("/", ()=> ShrtUrlsController.fetchAllByUserId);
+router.post("/", ShrtUrlsController.fetchAllByUserId);
 
 module.exports = router;

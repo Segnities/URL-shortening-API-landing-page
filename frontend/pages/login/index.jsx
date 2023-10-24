@@ -59,7 +59,7 @@ export default function Login() {
         providerId: user.providerId,
         providerName: user.providerData[0].providerId
       });
-      dispatch(setUserProvider(userProvider));
+      dispatch(setUserProvider(userProvider.user));
 
       return await router.push('/');
     } catch (e) {

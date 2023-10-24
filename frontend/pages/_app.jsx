@@ -4,6 +4,7 @@ import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 
 import AuthStateLayout from '../components/AuthStateLayout';
+import UrlsLayout from '../components/UrlsLayout';
 
 import {store} from '../store';
 
@@ -17,7 +18,9 @@ export default function App({
     <StrictMode>
       <Provider store={store}>
       <AuthStateLayout>
+        <UrlsLayout>
         <Component {...pageProps} />
+        </UrlsLayout>
       </AuthStateLayout>
       </Provider>
     </StrictMode>

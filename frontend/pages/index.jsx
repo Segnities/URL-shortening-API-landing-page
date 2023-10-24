@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import Head from 'next/head';
 
 import { Poppins } from 'next/font/google';
@@ -21,7 +19,6 @@ const poppins = Poppins({
 });
 
 export default function Home() {
-  const [urls, setUrls] = useState([]);
   return (
     <div className={`w-full ${poppins.className}`}>
       <Head>
@@ -34,9 +31,9 @@ export default function Home() {
         <LightSlateWrapper className="w-full bg-slate-200">
           <FormWrapper
             className="relative bottom-24 w-full h-44 flex flex-1 justify-center items-center">
-            <ShortForm setUrls={setUrls}/>
+            <ShortForm />
           </FormWrapper>
-          <UrlList urls={urls}/>
+          <UrlList />
           <SpacingSm/>
           <AdvancedStatistics/>
           <SpacingMd/>

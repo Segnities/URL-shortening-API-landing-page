@@ -21,7 +21,7 @@ export default function AuthStateLayout({children}) {
               providerName: user.providerData[0].providerId
             }).then(res => {
               console.log(res);
-              dispatch(setUserProvider(res.data));
+              dispatch(setUserProvider(res.data.user));
               dispatch(signUp(JSON.stringify(currentUser)));
             });
             console.log(currentUser);
