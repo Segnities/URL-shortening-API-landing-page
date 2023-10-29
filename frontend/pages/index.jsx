@@ -12,6 +12,7 @@ import FormWrapper from '../components/UI/FormWrapper';
 import AdvancedStatistics from '../components/AdvancedStatistics';
 import BoostLinks from '../components/BoostLinks';
 import DefaultLayout from '../components/UI/DefaultLayout';
+import { useSelector } from 'react-redux';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,25 +20,32 @@ const poppins = Poppins({
 });
 
 export default function Home() {
+  const { isAuth } = useSelector(state => state.auth);
   return (
     <div className={`w-full ${poppins.className}`}>
       <Head>
         <title>URL shortening</title>
       </Head>
       <DefaultLayout>
-        <SpacingSm/>
-        <Discover/>
-        <SpacingMd/>
+        <SpacingSm />
+        <Discover />
+        <SpacingMd />
         <LightSlateWrapper className="w-full bg-slate-200">
-          <FormWrapper
-            className="relative bottom-24 w-full h-44 flex flex-1 justify-center items-center">
-            <ShortForm />
-          </FormWrapper>
-          <UrlList />
-          <SpacingSm/>
-          <AdvancedStatistics/>
-          <SpacingMd/>
-          <BoostLinks/>
+          {
+            isAuth ? (
+              <>
+                <FormWrapper
+                  className="relative bottom-24 w-full h-44 flex flex-1 justify-center items-center">
+                  <ShortForm />
+                </FormWrapper>
+                <UrlList />
+              </>
+            ) : null
+          }
+          <SpacingSm />
+          <AdvancedStatistics />
+          <SpacingMd />
+          <BoostLinks />
         </LightSlateWrapper>
       </DefaultLayout>
     </div>
